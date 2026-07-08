@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bruna — BI & Data Analyst</title>
+<meta name="description" content="BI and Data Analyst based in Los Angeles. SQL, Python, Tableau, and turning operational data into decisions." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper: #F9F8F3;
+    --card: #FFFFFF;
+    --ink: #1A1D24;
+    --muted: #565C67;
+    --faint: #8A8F99;
+    --accent: #0C6E61;
+    --accent-soft: rgba(12, 110, 97, 0.08);
+    --line: #E6E2D8;
+
+    --serif: "Instrument Serif", Georgia, serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  a { color: inherit; }
+
+  /* ---- eyebrow / mono labels (the signature thread) ---- */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* ---- nav ---- */
+  nav {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 30px 0 0;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 26px;
+    letter-spacing: 0.01em;
+  }
+  .navlinks {
+    display: flex;
+    gap: 26px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+  .navlinks a {
+    text-decoration: none;
+    color: var(--muted);
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .navlinks a:hover,
+  .navlinks a:focus-visible { color: var(--ink); border-color: var(--accent); }
+
+  /* ---- hero ---- */
+  .hero { padding: 92px 0 76px; }
+  .hero .eyebrow { display: block; margin-bottom: 22px; }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(52px, 9vw, 104px);
+    line-height: 0.98;
+    letter-spacing: -0.01em;
+    margin-bottom: 30px;
+  }
+  .hero .lead {
+    font-size: clamp(20px, 2.4vw, 25px);
+    line-height: 1.4;
+    max-width: 30ch;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .hero .sub {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 62ch;
+    margin-bottom: 38px;
+  }
+
+  .linkrow {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 13.5px;
+  }
+  .linkrow a {
+    text-decoration: none;
+    color: var(--ink);
+    padding: 9px 16px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    background: var(--card);
+    transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  }
+  .linkrow a:hover,
+  .linkrow a:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  /* ---- section frame ---- */
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  .sechead { margin-bottom: 44px; }
+  .sechead .eyebrow { display: block; margin-bottom: 14px; }
+  .sechead h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(30px, 4.4vw, 42px);
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+
+  /* ---- work ---- */
+  .work { display: grid; gap: 18px; }
+  @media (min-width: 720px) {
+    .work { grid-template-columns: 1fr 1fr; }
+  }
+  .case {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 28px 28px 26px;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+  }
+  .case:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .case .idx {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--faint);
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+  .case h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .case p {
+    color: var(--muted);
+    font-size: 15.5px;
+    margin-bottom: 18px;
+  }
+  .metric {
+    font-family: var(--mono);
+    font-size: 14px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 8px 12px;
+    border-radius: 2px;
+    align-self: flex-start;
+    margin-bottom: 20px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+  }
+  .tag {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.03em;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    padding: 4px 9px;
+    border-radius: 2px;
+  }
+  .case .go {
+    font-family: var(--mono);
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--accent);
+    margin-top: 18px;
+    display: inline-block;
+  }
+  .case .go:hover { text-decoration: underline; }
+
+  /* ---- featured work (full-width) ---- */
+  .worklist { display: grid; gap: 18px; }
+  .feature {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 34px;
+    display: grid;
+    gap: 26px;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+  }
+  .feature:hover { border-color: var(--accent); transform: translateY(-2px); }
+  @media (min-width: 720px) {
+    .feature { grid-template-columns: 190px 1fr; gap: 44px; align-items: start; }
+  }
+  .feature-meta { display: flex; flex-direction: column; gap: 18px; }
+  .feature-body h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 1.05;
+    margin-bottom: 14px;
+  }
+  .feature-body p { color: var(--muted); font-size: 16px; max-width: 60ch; margin-bottom: 18px; }
+  .feature-body .go { margin-top: 0; }
+
+  /* ---- about ---- */
+  .about-grid { display: grid; gap: 40px; }
+  @media (min-width: 820px) {
+    .about-grid { grid-template-columns: 1.5fr 1fr; align-items: start; }
+  }
+  .about-body p { color: var(--muted); margin-bottom: 18px; max-width: 58ch; }
+  .about-body p strong { color: var(--ink); font-weight: 500; }
+  .index-list {
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+  .index-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 13.5px;
+  }
+  .index-list li span:first-child { color: var(--muted); }
+  .index-list li span:last-child { color: var(--ink); font-weight: 500; }
+
+  /* ---- skills ---- */
+  .skills { display: grid; gap: 28px; }
+  @media (min-width: 640px) {
+    .skills { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 900px) {
+    .skills { grid-template-columns: repeat(3, 1fr); }
+  }
+  .skillgroup h4 {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .skillgroup p { font-size: 15.5px; color: var(--ink); line-height: 1.7; }
+
+  /* ---- contact ---- */
+  .contact h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(34px, 6vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 26px;
+    max-width: 18ch;
+  }
+  .contact .email {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(24px, 4vw, 34px);
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px;
+  }
+  .contact .email:hover { border-color: var(--accent); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 34px 0 60px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--faint);
+    letter-spacing: 0.03em;
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  /* ---- reveal animation (gentle, respects reduced motion) ---- */
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <span class="brand">Bruna</span>
+    <div class="navlinks">
+      <a href="#work">work</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <span class="eyebrow reveal">BI &amp; Data Analyst · Los Angeles</span>
+    <h1 class="reveal">Bruna</h1>
+    <p class="lead reveal">I turn messy operational data into decisions teams can act on.</p>
+    <p class="sub reveal">Close to two years building dashboards, SQL pipelines, and automated reporting across 9 markets. Background in biochemical engineering and information systems. Based in Los Angeles and open to BI, data, and operations roles.</p>
+    <div class="linkrow reveal">
+      <!-- TODO: paste your real LinkedIn URL and resume link in the two href="#" below -->
+      <a href="#">LinkedIn</a>
+      <a href="https://github.com/BrunaKLacerda">GitHub</a>
+      <a href="#">Resume (PDF)</a>
+    </div>
+  </header>
+
+  <!-- ================= WORK ================= -->
+  <section id="work">
+    <div class="sechead reveal">
+      <span class="eyebrow">Selected work</span>
+      <h2>A few things I have built.</h2>
+    </div>
+
+    <div class="worklist">
+      <!-- DataHive -->
+      <article class="feature reveal">
+        <div class="feature-meta">
+          <div class="idx">01</div>
+          <div class="tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Product design</span>
+            <span class="tag">Blockchain</span>
+          </div>
+        </div>
+        <div class="feature-body">
+          <h3>DataHive</h3>
+          <p>A blockchain-secured marketplace for buying and selling data, with AI-assisted matching between buyers and sellers. My graduate capstone at CSULB. I designed the full concept and prototype in Figma, along with the value proposition and the pitch.</p>
+          <a class="go" href="#">View the prototype →</a>
+        </div>
+      </article>
+
+      <!-- Publication -->
+      <article class="feature reveal">
+        <div class="feature-meta">
+          <div class="idx">02</div>
+          <div class="tags">
+            <span class="tag">Research</span>
+            <span class="tag">Peer-reviewed</span>
+          </div>
+        </div>
+        <div class="feature-body">
+          <h3>Peer-reviewed publication</h3>
+          <p>Co-author of a peer-reviewed paper in the International Journal of Biological Macromolecules, from my biochemical engineering research at the University of São Paulo.</p>
+          <a class="go" href="#">Read the paper →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="sechead reveal">
+      <span class="eyebrow">About</span>
+      <h2>Where messy data meets a decision.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-body reveal">
+        <p>I studied <strong>biochemical engineering</strong> at the University of São Paulo, then a master's in <strong>information systems</strong> at CSULB. Most of my work sits where messy data meets a business decision.</p>
+        <p>As a BI analyst I spent close to two years writing SQL, building dashboards, and automating reporting for teams across nine markets. I like problems where the answer changes what someone actually does the next day.</p>
+        <p>Outside of work you will usually find me climbing, camping in the Sierras, or flying a drone somewhere with a good view.</p>
+      </div>
+      <ul class="index-list reveal">
+        <li><span>Focus</span><span>BI · Data · Ops</span></li>
+        <li><span>Years in BI</span><span>~2</span></li>
+        <li><span>Peer-reviewed papers</span><span>1</span></li>
+        <li><span>Based in</span><span>Los Angeles</span></li>
+        <li><span>Languages</span><span>EN / PT</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <div class="sechead reveal">
+      <span class="eyebrow">Toolkit</span>
+      <h2>What I work with.</h2>
+    </div>
+
+    <div class="skills">
+      <div class="skillgroup reveal">
+        <h4>Query &amp; code</h4>
+        <p>SQL · Python · Google Apps Script</p>
+      </div>
+      <div class="skillgroup reveal">
+        <h4>Visualization</h4>
+        <p>Tableau · Power BI · Redash</p>
+      </div>
+      <div class="skillgroup reveal">
+        <h4>Data &amp; tools</h4>
+        <p>Snowflake · Oracle SQL Developer · Excel</p>
+      </div>
+      <div class="skillgroup reveal">
+        <h4>Workflow</h4>
+        <p>Git · Jira · Agile</p>
+      </div>
+      <div class="skillgroup reveal">
+        <h4>Certifications</h4>
+        <p>Six Sigma Green Belt · Google AI Essentials · Google Prompting Essentials</p>
+      </div>
+      <div class="skillgroup reveal">
+        <h4>Domains</h4>
+        <p>Business intelligence · Operations · Finance ops</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="contact">
+    <div class="reveal">
+      <h2>Let's talk.</h2>
+      <p style="color: var(--muted); max-width: 46ch; margin-bottom: 28px;">The fastest way to reach me is email or LinkedIn. I am currently open to BI, data, and operations roles in Los Angeles.</p>
+      <!-- Replace with your real email -->
+      <a class="email" href="mailto:you@email.com">you@email.com</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Bruna · Los Angeles</span>
+    <span>
+      <a href="#">LinkedIn</a> ·
+      <a href="https://github.com/BrunaKLacerda">GitHub</a>
+    </span>
+  </footer>
+</div>
+
+<script>
+  // Gentle scroll reveal. Skipped entirely if reduced motion is preferred.
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(el => el.classList.add("in"));
+  } else {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add("in"); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(el => obs.observe(el));
+  }
+</script>
+
+</body>
+</html>
