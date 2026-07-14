@@ -4,11 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Bruna Lacerda — BI & Data Analyst</title>
-<meta name="description" content="BI and Data Analyst based in Los Angeles. SQL, Python, Tableau, and turning operational data into decisions." />
+<meta name="description" content="BI and Data Analyst in Los Angeles. SQL, Python, Tableau, and turning operational data into decisions. Open to BI, data, operations, and strategy roles." />
+
+<!-- Favicon: inline SVG, no extra files to manage. -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230C6E61'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' fill='%23F9F8F3' text-anchor='middle'%3EBL%3C/text%3E%3C/svg%3E" />
+<meta name="theme-color" content="#0C6E61" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet" />
 
 <style>
   :root {
@@ -243,6 +247,30 @@
   .feature-body p { color: var(--muted); font-size: 16px; max-width: 60ch; margin-bottom: 18px; }
   .feature-body .go { margin-top: 0; }
 
+  /* ---- quantified results list (lead case study) ---- */
+  .results { list-style: none; display: grid; gap: 11px; margin-bottom: 20px; max-width: 62ch; }
+  .results li { display: flex; gap: 13px; align-items: baseline; font-size: 15.5px; color: var(--muted); }
+  .results .num {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 9px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 82px;
+    text-align: center;
+  }
+  .note {
+    font-size: 13.5px;
+    color: var(--faint);
+    max-width: 60ch;
+    padding-top: 4px;
+    border-top: 1px solid var(--line);
+    margin-top: 2px;
+  }
+
   /* ---- about ---- */
   .about-grid { display: grid; gap: 40px; }
   @media (min-width: 820px) {
@@ -351,7 +379,6 @@
     <p class="lead reveal">I turn messy operational data into decisions teams can act on.</p>
     <p class="sub reveal">Close to two years building dashboards, SQL pipelines, and automated reporting across 9 markets. Background in biochemical engineering and information systems. Based in Los Angeles and open to BI, data, and operations roles.</p>
     <div class="linkrow reveal">
-      <!-- TODO: paste your real LinkedIn URL and resume link in the two href="#" below -->
       <a href="https://www.linkedin.com/in/brunaklacerda/">LinkedIn</a>
       <a href="https://github.com/BrunaKLacerda">GitHub</a>
       <a href="https://drive.google.com/file/d/10OvGkmwrIj21bbaHfacURwjTh5ZQ1jbQ/view?usp=sharing">Resume (PDF)</a>
@@ -366,37 +393,116 @@
     </div>
 
     <div class="worklist">
-      <!-- DataHive -->
+      <!-- 01 — Rappi (lead case study) -->
       <article class="feature reveal">
         <div class="feature-meta">
           <div class="idx">01</div>
           <div class="tags">
-            <span class="tag">Figma</span>
-            <span class="tag">Product design</span>
-            <span class="tag">Blockchain</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+            <span class="tag">Google Apps Script</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Dashboards</span>
           </div>
         </div>
         <div class="feature-body">
-          <h3>DataHive</h3>
-          <p>A blockchain-secured marketplace for buying and selling data, with AI-assisted matching between buyers and sellers. My graduate capstone at CSULB. I designed the full concept and prototype in Figma, along with the value proposition and the pitch.</p>
-          <a class="go" href="#">View the prototype →</a>
+          <h3>BI Analyst — Rappi Brasil</h3>
+          <p>Turbo, the quick-commerce arm. Nov 2022 – Sep 2024. I analyzed sales and inventory across nine Brazilian markets, monitored the KPIs behind stocking and pricing calls, and automated the reporting the team relied on. Four things I built or co-built, and what they changed:</p>
+          <ul class="results">
+            <li>
+              <span class="num">+4 pts</span>
+              <span>Net margin, from a smart promotions decision tree I co-designed. It automated discount allocation by product tier and shelf life, cut loss risk by 20%, and was implemented nationally.</span>
+            </li>
+            <li>
+              <span class="num">−92%</span>
+              <span>Email processing time, from a back-margin recovery process built in Google Apps Script and Python — revenue calculation through to automated payment requests.</span>
+            </li>
+            <li>
+              <span class="num">−75%</span>
+              <span>Errors in discount application, after I redesigned the templates around stakeholder feedback. SLA improved alongside it.</span>
+            </li>
+            <li>
+              <span class="num">2 hrs</span>
+              <span>Saved per cycle by automating recurring KPI and inventory analysis. I built the dashboards and presented them to stakeholders.</span>
+            </li>
+          </ul>
+          <p>Recognized in 2022 for embodying <em>We Get Results</em> (Obtemos Resultados), one of Rappi's eleven core values.</p>
+          <p class="note">The dashboards are internal and confidential, so there are no screenshots here. The numbers are the evidence — happy to walk through the work in detail.</p>
         </div>
       </article>
 
-      <!-- Publication -->
+      <!-- 02 — Cherry Ave AirWatch -->
       <article class="feature reveal">
         <div class="feature-meta">
           <div class="idx">02</div>
           <div class="tags">
-            <span class="tag">Research</span>
-            <span class="tag">Peer-reviewed</span>
+            <span class="tag">Graduate capstone</span>
+            <span class="tag">Lovable</span>
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">Dashboards</span>
           </div>
         </div>
         <div class="feature-body">
-          <h3>Peer-reviewed publication</h3>
-          <p>Co-author of a peer-reviewed paper in the International Journal of Biological Macromolecules, from my biochemical engineering research at the University of São Paulo.</p>
-          <a class="go" href="#">Read the paper →</a>
+          <h3>Cherry Ave AirWatch</h3>
+          <p>A public portal that makes a proposed North Long Beach warehouse development legible to the people who would live next to it: project timeline, air-quality and pollution dashboards, and a community feedback form. My IS699 graduate capstone at CSULB, built with a team of eight across three Agile sprints. I worked as a developer.</p>
+          <p>Nominated for CSULB's Graduate Dean's Distinguished Project Award.</p>
+          <p class="note">A student project. The environmental figures shown are projected and illustrative, not live monitoring data.</p>
+          <a class="go" href="https://cherryave-airwatch.lovable.app/" target="_blank" rel="noopener">View the portal →</a>
         </div>
+      </article>
+    </div>
+
+    <div class="work" style="margin-top: 18px;">
+      <!-- 03 — GPT-style language model -->
+      <article class="case reveal">
+        <div class="idx">03</div>
+        <h3>GPT-style language model</h3>
+        <p>A transformer built from scratch on the nanoGPT methodology, trained to model IMDb TV-series synopses. I built the text ETL pipeline — cleaning, tokenization, batching — and implemented self-attention, multi-head attention, and the feed-forward layers, then evaluated with NumPy, Pandas, Matplotlib, and scikit-learn. A collaborative course project.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">NLP</span>
+        </div>
+        <a class="go" href="https://github.com/BrunaKLacerda/IS640-GPT-Project" target="_blank" rel="noopener">View the code →</a>
+      </article>
+
+      <!-- 04 — PCOS detection -->
+      <article class="case reveal">
+        <div class="idx">04</div>
+        <h3>PCOS detection with deep learning</h3>
+        <p>A multimodal study comparing classical machine learning against neural networks for detecting polycystic ovary syndrome, across clinical records and ovarian ultrasound images. I trained and tuned logistic regression, tree ensembles, an MLP, a custom CNN, and a HOG+SVM baseline, then compared them on recall and F1 rather than raw accuracy — because in screening, a missed case costs more than a false alarm. The classical pipeline beat the CNN. A proof of concept on academic data, not a clinical tool.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Machine learning</span>
+          <span class="tag">scikit-learn</span>
+        </div>
+        <a class="go" href="https://github.com/BrunaKLacerda/PCOS-Detection-DeepLearning" target="_blank" rel="noopener">View the code →</a>
+      </article>
+
+      <!-- 05 — DataHive -->
+      <article class="case reveal">
+        <div class="idx">05</div>
+        <h3>DataHive</h3>
+        <p>A blockchain-secured marketplace for buying and selling data, with AI-assisted matching between buyers and sellers. A graduate course project at CSULB. I designed the full concept and prototype in Figma, along with the value proposition and the pitch.</p>
+        <div class="tags">
+          <span class="tag">Figma</span>
+          <span class="tag">Product design</span>
+          <span class="tag">Blockchain</span>
+        </div>
+        <a class="go" href="https://noise-grasp-13544646.figma.site/" target="_blank" rel="noopener">View the prototype →</a>
+      </article>
+
+      <!-- 06 — Publication -->
+      <article class="case reveal">
+        <div class="idx">06</div>
+        <h3>Peer-reviewed publication</h3>
+        <p>Co-author of a peer-reviewed paper on producing nanocellulose via enzymatic hydrolysis, published in the International Journal of Biological Macromolecules (Elsevier, 2023), from my biochemical engineering research at the University of São Paulo. The same research earned an Academic Honors Award at USP's SIICUSP symposium.</p>
+        <div class="tags">
+          <span class="tag">Research</span>
+          <span class="tag">Peer-reviewed</span>
+        </div>
+        <a class="go" href="https://www.sciencedirect.com/science/article/abs/pii/S0141813023019475" target="_blank" rel="noopener">Read the paper →</a>
       </article>
     </div>
   </section>
@@ -419,7 +525,7 @@
         <li><span>Years in BI</span><span>~2</span></li>
         <li><span>Peer-reviewed papers</span><span>1</span></li>
         <li><span>Based in</span><span>Los Angeles</span></li>
-        <li><span>Languages</span><span>EN / PT</span></li>
+        <li><span>Languages</span><span>EN / PT · ES (conv.)</span></li>
       </ul>
     </div>
   </section>
@@ -434,27 +540,27 @@
     <div class="skills">
       <div class="skillgroup reveal">
         <h4>Query &amp; code</h4>
-        <p>SQL · Python · Google Apps Script</p>
+        <p>SQL · Python · PyTorch · Google Apps Script</p>
       </div>
       <div class="skillgroup reveal">
-        <h4>Visualization</h4>
-        <p>Tableau · Power BI · Redash</p>
+        <h4>BI &amp; visualization</h4>
+        <p>Tableau · Power BI · Redash · Excel (Advanced) · Google Sheets</p>
       </div>
       <div class="skillgroup reveal">
-        <h4>Data &amp; tools</h4>
-        <p>Snowflake · Oracle SQL Developer · Excel</p>
+        <h4>Data &amp; cloud</h4>
+        <p>Snowflake · Oracle SQL Developer · Azure · ETL · Data modeling</p>
+      </div>
+      <div class="skillgroup reveal">
+        <h4>Methods</h4>
+        <p>Predictive modeling · Machine learning · Statistical analysis · Hypothesis testing · Process automation</p>
       </div>
       <div class="skillgroup reveal">
         <h4>Workflow</h4>
-        <p>Git · Jira · Agile</p>
+        <p>Git · Jira · Agile · Six Sigma Green Belt</p>
       </div>
       <div class="skillgroup reveal">
         <h4>Certifications</h4>
-        <p>Six Sigma Green Belt · Google AI Essentials · Google Prompting Essentials</p>
-      </div>
-      <div class="skillgroup reveal">
-        <h4>Domains</h4>
-        <p>Business intelligence · Operations · Finance ops</p>
+        <p>Six Sigma Green Belt (UCLA Extension) · Google AI Essentials · Google Prompting Essentials</p>
       </div>
     </div>
   </section>
@@ -464,7 +570,6 @@
     <div class="reveal">
       <h2>Let's talk.</h2>
       <p style="color: var(--muted); max-width: 46ch; margin-bottom: 28px;">The fastest way to reach me is email or LinkedIn. I am currently open to BI, data, and operations roles in Los Angeles.</p>
-      <brunalacerda.co@gmail.com>
       <a class="email" href="mailto:brunalacerda.co@gmail.com">brunalacerda.co@gmail.com</a>
     </div>
   </section>
@@ -472,7 +577,7 @@
   <footer>
     <span>Bruna · Los Angeles</span>
     <span>
-      <a href="#">LinkedIn</a> ·
+      <a href="https://www.linkedin.com/in/brunaklacerda/">LinkedIn</a> ·
       <a href="https://github.com/BrunaKLacerda">GitHub</a>
     </span>
   </footer>
